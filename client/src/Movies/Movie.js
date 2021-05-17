@@ -12,7 +12,9 @@ export default function Movie(props) {
       .get(`http://localhost:5000/api/movies/${id}`) // Study this endpoint with Postman
       .then(response => {
         // Study this response with a breakpoint or log statements
+        console.log(response.data);
         // and set the response data as the 'movie' slice of state
+        setMovie(response.data);
       })
       .catch(error => {
         console.error(error);
